@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Звіти з лабораторних</title>
+    <style>
+        #main_section {
+            display: flex;
+            gap: 2vw;
+            margin-top: 20px;
+        }
+        .left_section {
+            width: 40%;
+        }
+        .right_section {
+            width: 60%;
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .info_button {
+            display: block;
+            margin: 8px 0;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+            padding: 8px;
+            cursor: pointer;
+        }
+        .sub_button {
+            display: block;
+            margin: 5px 0 5px 20px;
+            background-color: lightgreen;
+            border: none;
+            border-radius: 5px;
+            padding: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section class="lab_list_section">
+        <ul>
+            <li><button class="lab_button" id="lab_1">Практична робота 1</button></li>
+            <li><button class="lab_button" id="lab_2">Практична робота 2</button></li>
+            <li><button class="lab_button" id="lab_3">Практична робота 3</button></li>
+        </ul>
+    </section>
+
+    <section id="main_section">
+        <div class="left_section"></div>
+        <div class="right_section">
+            <div class="shower_info">Тут буде виводитися інформація</div>
+        </div>
+    </section>
+
+    <script>
+        // 🔹 Дані для кожної лабораторної
+        const labData = {
+            lab_1: {
+                theme_and_purpose: "Тема і мета лабораторної №1: Ознайомлення з HTML.",
+                business_logic: "Бізнес-логіка ЛР1: створити базову веб-сторінку.",
+                structure_of_document: {
+                    info: "Структура документа ЛР1 складається з кількох частин:",
+                    sub: {
+                        html: "HTML-код структури ЛР1...",
+                        css: "CSS-оформлення структури ЛР1...",
+                        js: "JS-логіка структури ЛР1..."
+                    }
+                },
+                main_web_page_link: "Посилання на головну сторінку ЛР1: index.html",
+                code_of_main_page: "HTML-код головної сторінки ЛР1 тут...",
+                conclusions: "Висновки ЛР1: набуті початкові навички роботи з HTML."
+            },
+            lab_2: {
+                theme_and_purpose: "Тема і мета лабораторної №2: CSS.",
+                business_logic: "Бізнес-логіка ЛР2: стилізація сторінки.",
+                structure_of_document: {
+                    info: "Структура документа ЛР2 складається з кількох частин:",
+                    sub: {
+                        html: "HTML-код структури ЛР2...",
+                        css: "CSS-оформлення структури ЛР2...",
+                        js: "JS-логіка структури ЛР2..."
+                    }
+                },
+                main_web_page_link: "Посилання на головну сторінку ЛР2: style.html",
+                code_of_main_page: "CSS-код головної сторінки ЛР2 тут...",
+                conclusions: "Висновки ЛР2: навчились стилям."
+            },
+            lab_3: {
+                theme_and_purpose: "Тема і мета лабораторної №3: JS.",
+                business_logic: "Бізнес-логіка ЛР3: інтерактивність.",
+                structure_of_document: {
+                    info: "Структура документа ЛР3 складається з кількох частин:",
+                    sub: {
+                        html: "HTML-код структури ЛР3...",
+                        css: "CSS-оформлення структури ЛР3...",
+                        js: "JS-логіка структури ЛР3..."
+                    }
+                },
+                main_web_page_link: "Посилання на головну сторінку ЛР3: script.html",
+                code_of_main_page: "JS-код головної сторінки ЛР3 тут...",
+                conclusions: "Висновки ЛР3: інтерактивність на сайті."
+            }
+        };
+
+        const mainSection = document.getElementById("main_section");
+        const leftSection = mainSection.querySelector(".left_section");
+        const showerInfo = mainSection.querySelector(".shower_info");
+
+        // 🔹 Вішаємо події на кнопки лабораторних
+        document.querySelectorAll(".lab_button").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const labId = btn.id;
+
+                // Вставляємо список кнопок
+                leftSection.innerHTML = `
+                    <h3>${btn.innerText}</h3>
+                    <ul class="button_holder">
+                        <li><button class="info_button" data-info="theme_and_purpose">Тема і мета лабораторної роботи</button></li>
+                        <li><button class="info_button" data-info="business_logic">Опис предметного середовища. Бізнес-логіка</button></li>
+                        <li><button class="info_button" data-info="structure_of_document">Структура документа</button></li>
+                        <li><button class="info_button" data-info="main_web_page_link">Головна сторінка WEB-застосунку</button></li>
+                        <li><button class="info_button" data-info="code_of_main_page">Код головної сторінки WEB-застосунку</button></li>
+                        <li><button class="info_button" data-info="conclusions">Висновки</button></li>
+                    </ul>
+                `;
+
+                // Вішаємо обробники
+                leftSection.querySelectorAll(".info_button").forEach(infoBtn => {
+                    infoBtn.addEventListener("click", () => {
+                        const key = infoBtn.getAttribute("data-info");
+
+                        // 🔹 Якщо це "structure_of_document", додаємо підкнопки
+                        if (key === "structure_of_document") {
+                            showerInfo.innerHTML = labData[labId][key].info;
+
+                            // Додаємо підкнопки
+                            infoBtn.insertAdjacentHTML("afterend", `
+                                <div class="sub_buttons">
+                                    <button class="sub_button" data-sub="html">HTML</button>
+                                    <button class="sub_button" data-sub="css">CSS</button>
+                                    <button class="sub_button" data-sub="js">JS</button>
+                                </div>
+                            `);
+
+                            // Обробка кліків по підкнопках
+                            leftSection.querySelectorAll(".sub_button").forEach(subBtn => {
+                                subBtn.addEventListener("click", () => {
+                                    const subKey = subBtn.getAttribute("data-sub");
+                                    showerInfo.innerHTML = labData[labId][key].sub[subKey];
+                                });
+                            });
+
+                        } else {
+                            showerInfo.innerHTML = labData[labId][key] || "Немає даних.";
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

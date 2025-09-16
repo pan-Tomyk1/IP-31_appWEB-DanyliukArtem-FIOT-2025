@@ -1,0 +1,348 @@
+/* Встановлення основних стилів та шрифтів */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5EFE1; /* Теплий бежевий */
+    color: #5A3A31; /* Какао */
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #5A3A31;
+}
+
+/* --- Загальні стилі --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.auth-buttons .btn {
+    border: 1px solid #5A3A31;
+    color: #5A3A31;
+    margin-left: 10px;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #5A3A31;
+    color: #fff;
+}
+
+.auth-buttons .register {
+    background-color: #5A3A31;
+    color: #F5EFE1;
+}
+
+.auth-buttons .register:hover {
+    background-color: #4b3832;
+}
+
+/* --- Хедер --- */
+.header {
+    background-color: #D1A45B; /* Золотаво-медовий */
+    padding: 15px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.logo-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #F5EFE1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #5A3A31;
+}
+
+.search-bar input::placeholder {
+    color: #8a6c5d;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* --- Hero-секція --- */
+.hero-section {
+    background-color: #F5EFE1; /* Теплий бежевий */
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.hero-text-content {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+}
+
+.hero-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.hero-title-group img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #D1A45B;
+}
+
+.hero-title {
+    font-size: 4em;
+    margin: 0;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 0 0 20px;
+}
+
+.hero-description {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.hero-image {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.cake-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: rotate(5deg);
+}
+
+/* --- Секція пропозицій --- */
+.proposals-section {
+    background-color: #F5EFE1;
+    padding: 60px 5% 0;
+    text-align: center;
+}
+
+.proposals-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.proposals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.proposal-item {
+    background-color: #D1A45B;
+    padding: 30px; /* Залишаємо відступ з усіх сторін */
+    padding-left: 60px; /* Збільшуємо відступ зліва, щоб посунути текст */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: left;
+}
+
+.proposal-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 5em;
+    font-weight: 700;
+    color: #FFFFFF;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.proposal-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 20px;
+}
+
+.proposal-content h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+    color: #5A3A31;
+}
+
+.proposal-content p {
+    font-size: 1em;
+    color: #4b3832;
+}
+
+/* --- Футер --- */
+.footer {
+    background-color: #5A3A31;
+    color: #F5EFE1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+/* --- Медіа-запити для адаптивності --- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .search-bar {
+        order: 3;
+    }
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text-content {
+        max-width: 100%;
+    }
+    .hero-title-group {
+        justify-content: center;
+    }
+    .cake-image {
+        transform: rotate(0);
+    }
+}
+/* Секція категорій */
+.categories-section {
+    margin: 5vh 5vw;
+}
+.categories-section h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.categories-section p {
+    margin: 10px 0;
+}
+.categories-section ul,
+.categories-section ol {
+    margin: 10px 0 20px 25px;
+}
+.categories-section li {
+    list-style-type: disc; /* повертаємо маркери для ul */
+    margin-bottom: 5px;
+}
+.categories-section ol li {
+    list-style-type: decimal; /* для ol — цифри */
+}
+
+/* Секція таблиці */
+.ingredients-table {
+    margin: 5vh 5vw;
+}
+.ingredients-table h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.ingredients-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.ingredients-table th {
+    background-color: lightblue;
+    text-align: left;
+}
+.ingredients-table th,
+.ingredients-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Секція форми */
+.feedback-form {
+    margin: 5vh 5vw;
+}
+.feedback-form h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.feedback-form form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    gap: 10px;
+}
+.feedback-form input,
+.feedback-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.feedback-form button {
+    background-color: aquamarine;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.feedback-form button:hover {
+    background-color: deepskyblue;
+    color: white;
+}
+
+/* Секція з посиланням */
+.about-link {
+    margin: 5vh 5vw;
+    text-align: center;
+}
+.about-link a {
+    color: deepskyblue;
+    font-weight: 500;
+    text-decoration: underline;
+}

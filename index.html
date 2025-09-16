@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essentia: Кулінарна Суть</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-circle">
+                <img src="../IP-31_appWEB-DanyliukArtem-FIOT-2025/img/logo.svg" alt="Логотип Essentia">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Знайти рецепт ..." aria-label="Знайти рецепт">
+            </div>
+            <div class="auth-buttons">
+                <a href="#" class="btn">Увійти</a>
+                <a href="#" class="btn register">Зареєструватися</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-text-content">
+                <div class="hero-title-group">
+                    <h1 class="hero-title">Essentia</h1>
+                    <img src="../IP-31_appWEB-DanyliukArtem-FIOT-2025/img/logo.svg" alt="Іконка ножа і виделки">
+                </div>
+                <h2 class="hero-subtitle">Кожен рецепт має душу. Знайдіть її тут.</h2>
+                <p class="hero-description">Essentia — це платформа для тих, хто вважає кулінарію високим мистецтвом. Відкривайте готові рецепти, створені з пристрастю, або творіть свої. Наш інтуїтивний інтерфейс дозволяє вам легко упорядковувати ваші шедеври у витончені книги, готові до друку чи цифрового збереження. Essentia перетворює ваші ідеї на вічну колекцію.</p>
+            </div>
+            <div class="hero-image">
+                <img src="../IP-31_appWEB-DanyliukArtem-FIOT-2025/img/cake_photo.png" alt="Шоколадний торт з карамеллю" class="cake-image">
+            </div>
+        </section>
+
+        <section class="proposals-section">
+            <h2>Що ми пропонуємо ?</h2>
+            <div class="proposals-grid">
+                <div class="proposal-item">
+                    <div class="proposal-number">1</div>
+                    <div class="proposal-content">
+                        <h3>Шукати рецепти</h3>
+                        <p>Ви можете в полі пошуку знайти рецепти по ключових словах. Також буде можливість застосовувати фільтри до знайдених рецептів.</p>
+                    </div>
+                </div>
+                <div class="proposal-item">
+                    <div class="proposal-number">2</div>
+                    <div class="proposal-content">
+                        <h3>Створювати рецепти</h3>
+                        <p>Після реєстрації ви зможете створювати власні рецепти, ставити їм статус "публічний" і інші користувачі зможуть використовувати ваші рецепти.</p>
+                    </div>
+                </div>
+                <div class="proposal-item">
+                    <div class="proposal-number">3</div>
+                    <div class="proposal-content">
+                        <h3>Створювати власну бібліотеку рецептів</h3>
+                        <p>Після реєстрації ви зможете створювати власну бібліотеку рецептів, додати туди власні рецепти або ті, які є вільному доступі.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!-- Секція з популярними категоріями (списки) -->
+    <section class="categories-section">
+        <h2>Популярні категорії</h2>
+        <p>Ми зібрали для вас як прості, так і складні рецепти. Перегляньте:</p>
+        <ul>
+            <li>Десерти</li>
+            <li>Основні страви</li>
+            <li>Супи</li>
+            <li>Салати</li>
+        </ul>
+        <p>А також спробуйте себе у приготуванні:</p>
+        <ol>
+            <li>Французьких круасанів</li>
+            <li>Домашньої пасти</li>
+            <li>Справжнього борщу</li>
+        </ol>
+    </section>
+
+    <!-- Секція з таблицею -->
+    <section class="ingredients-table">
+        <h2>Приклад інгредієнтів</h2>
+        <p>Для прикладу наведемо таблицю інгредієнтів для шоколадного торта:</p>
+        <table border="1" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>Інгредієнт</th>
+                    <th>Кількість</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Борошно</td>
+                    <td>250 г</td>
+                </tr>
+                <tr>
+                    <td>Какао</td>
+                    <td>50 г</td>
+                </tr>
+                <tr>
+                    <td>Яйця</td>
+                    <td>3 шт</td>
+                </tr>
+                <tr>
+                    <td>Цукор</td>
+                    <td>200 г</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Секція з формою -->
+    <section class="feedback-form">
+        <h2>Зворотний зв’язок</h2>
+        <p>Маєте власний рецепт або пропозицію? Надішліть нам!</p>
+        <form>
+            <label for="name">Ваше ім’я:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Електронна пошта:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Ваше повідомлення:</label><br>
+            <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+
+            <button type="submit">Надіслати</button>
+        </form>
+    </section>
+
+    <!-- Посилання на окрему сторінку з описом предметної області -->
+    <section class="about-link">
+        <h2>Дізнайтеся більше</h2>
+        <p>Перейдіть за посиланням, щоб прочитати <a href="https://drive.google.com/file/d/1oxVIyBXexlWvmPkixZnIS6koyz0_ATun/view?usp=sharing">опис предметної області та бізнес-логіки</a> нашого проєкту.</p>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <p>Всі права захищені</p>
+    </footer>
+
+</body>
+</html>
